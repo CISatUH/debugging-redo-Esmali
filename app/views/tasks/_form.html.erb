@@ -25,6 +25,11 @@
     <%= form.label :job_id %>
     <%= form.text_field :job_id %>
   </div>
+  
+  <div class="field">
+    <%= form.label :provider %><br>
+    <%= form.collection_select :job_id, Job.all, :id, :name %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
