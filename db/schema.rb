@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_180135) do
+ActiveRecord::Schema.define(version: 2019_02_17_180801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_180135) do
     t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: false
     t.index ["job_id"], name: "index_tasks_on_job_id"
   end
 
