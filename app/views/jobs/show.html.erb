@@ -9,5 +9,12 @@
   <%= @job.location %>
 </p>
 
+<%if @job.status%>
+    <p><strong>Job Complete:</strong>Yes</p>
+<%else%>
+    <p><strong>Job Complete:</strong>No</p>
+<%end%>
+
+
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

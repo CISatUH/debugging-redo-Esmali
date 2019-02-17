@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-       <th>Location</th>
+      <th>Location</th>
+      <th>Job Complete</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= job.name %></td>
         <td><%= job.location %></td>
+        <%if job.status%>
+          <td>Yes</td>
+        <%else%>
+          <td>No</td>
+        <%end%>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Effort</th>
       <th>Job</th>
+      <th>Task Complete</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,11 @@
         <td><%= task.name %></td>
         <td><%= task.effort %></td>
         <td><%= Job.find(task.job_id).name %></td>
+        <%if task.status%>
+          <td>Yes</td>
+        <%else%>
+          <td>No</td>
+        <%end%>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
